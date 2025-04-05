@@ -94,6 +94,11 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // Add click handler for navigate button
+    navigateButton.addEventListener('click', function() {
+        window.open('https://maps.app.goo.gl/ZUi1joTRvd1LtaNbA', '_blank');
+    });
+
     calendarButton.addEventListener('click', function() {
         const calendarEvents = events.map(event => ({
             title: `${brideName} & ${groomName} ${event.title}`,
