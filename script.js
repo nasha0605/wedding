@@ -96,7 +96,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Add click handler for navigate button
     navigateButton.addEventListener('click', function() {
-        window.open('https://maps.app.goo.gl/ZUi1joTRvd1LtaNbA', '_blank');
+        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        const mapUrl = isMobile 
+            ? 'geo:13.0837,80.2700?q=JMA+Convention+Center,+Choolai,+Chennai'
+            : 'https://maps.app.goo.gl/ZUi1joTRvd1LtaNbA';
+        
+        window.location.href = mapUrl;
     });
 
     calendarButton.addEventListener('click', function() {
