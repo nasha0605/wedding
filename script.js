@@ -97,11 +97,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add click handler for navigate button
     navigateButton.addEventListener('click', function() {
         const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-        const mapUrl = isMobile 
-            ? 'geo:13.0837,80.2700?q=JMA+Convention+Center,+Choolai,+Chennai'
-            : 'https://maps.app.goo.gl/ZUi1joTRvd1LtaNbA';
-        
-        window.location.href = mapUrl;
+        if (isMobile) {
+            openGoogleMaps(13.0837, 80.2700, 'JMA Convention Center, Choolai, Chennai');
+        } else {
+            window.open('https://maps.app.goo.gl/ZUi1joTRvd1LtaNbA', '_blank');
+        }
     });
 
     calendarButton.addEventListener('click', function() {
@@ -116,7 +116,14 @@ document.addEventListener('DOMContentLoaded', function() {
         const icsContent = generateICS(calendarEvents);
         downloadFile(icsContent, 'wedding_invite.ics');
     });
-
+    function openGoogleMaps(latitude, longitude, label) {
+        let mapUri = "geo:" + latitude + "," + longitude;
+        if (label) {
+            mapUri += "(" + label + ")";
+        }
+        
+        window.open(mapUri, '_system'); // '_system' will open the native app
+    }
     function formatDate(dateStr) {
         const year = dateStr.substring(0, 4);
         const month = dateStr.substring(4, 6);
