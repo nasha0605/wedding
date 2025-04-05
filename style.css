@@ -441,6 +441,9 @@ body {
     .couple-names {
         font-size: 5.5rem;
     }
+    .section-title:first-of-type {
+        margin-bottom: 0px;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -541,7 +544,7 @@ html {
     }
 
     .hero-section {
-        height: 90vh;
+        height: 99vh;
     }
 
     .hero-content {
@@ -549,7 +552,7 @@ html {
     }
 
     .couple-names {
-        font-size: 3.5rem;
+        font-size: 4.2rem;
         flex-wrap: wrap;
         justify-content: center;
     }
@@ -561,7 +564,7 @@ html {
     }
 
     .pre-title {
-        font-size: 1rem;
+        font-size: 1.8rem;
         letter-spacing: 2px;
     }
 
@@ -585,8 +588,7 @@ html {
     }
 
     .invitation-text {
-        font-size: 1rem;
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
         padding: 0 1rem;
     }
 
@@ -600,7 +602,7 @@ html {
     }
 
     .detail-item h3 {
-        font-size: 1.3rem;
+        font-size: 1.8rem;
     }
 
     /* Timeline mobile improvements */
@@ -666,18 +668,6 @@ html {
 
 /* Small Mobile Styles (up to 375px) */
 @media screen and (max-width: 375px) {
-    html {
-        font-size: 13px;
-    }
-
-    .couple-names {
-        font-size: 4rem;
-    }
-
-    .pre-title {
-        font-size: 1.3rem;
-    }
-
     .timeline-content {
         padding: 1rem;
     }
@@ -686,33 +676,8 @@ html {
         padding: 0.2rem 0.6rem;
     }
 
-    .compliments {
-        font-size: 1.4rem;
-        margin-top: 1.5rem;
-    }
-
     .ganesh-image {
         width: 70px;
-    }
-    
-    .pre-title {
-        font-size: 1.3rem;
-    }
-    
-    .couple-names {
-        font-size: 4rem;
-    }
-
-    .invitation-text {
-        font-size: 1.3rem;
-    }
-    
-    .detail-item h3 {
-        font-size: 1.4rem;
-    }
-    
-    .detail-item p {
-        font-size: 1rem;
     }
 }
 
@@ -742,44 +707,6 @@ html {
     }
 }
 
-/* Print Styles */
-@media print {
-    .hero-section {
-        height: auto;
-        background: none;
-    }
-
-    .overlay {
-        display: none;
-    }
-
-    .hero-content {
-        color: var(--text-color);
-    }
-
-    .couple-names {
-        color: var(--primary-color);
-    }
-
-    .btn {
-        display: none;
-    }
-
-    .timeline::before {
-        display: none;
-    }
-
-    .timeline-content::before {
-        display: none;
-    }
-
-    .timeline-item {
-        page-break-inside: avoid;
-        transform: none !important;
-        width: 100%;
-        margin: 1rem 0;
-    }
-}
 
 /* High DPI Screens */
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
@@ -875,7 +802,7 @@ html {
     }
     
     .compliments {
-        font-size: 1.2rem;
+        font-size: 2rem;
         padding-top: 1.5rem;
     }
 }
