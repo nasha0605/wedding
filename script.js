@@ -47,24 +47,44 @@ document.addEventListener('DOMContentLoaded', function() {
             endTime: '220000',
             location: 'JMA Convention Center, Choolai, Chennai',
             mapLink: 'https://maps.app.goo.gl/ZUi1joTRvd1LtaNbA'
-        },
-        {
-            title: 'Mayra',
-            date: '20250505',
-            time: '110000',
-            endTime: '140000',
-            location: 'Prince Paradise, Vepery, Choolai, Chennai',
-            mapLink: 'https://maps.app.goo.gl/DfQhvBTPzp1oqUha9'
-        },
-        {
+        }
+    ];
+    if (!isBusinessMode) {
+        events.push({
             title: 'Wedding Ceremony',
             date: '20250506',
             time: '103000',
             endTime: '140000',
             location: 'Rani Meyammai Hall, Chennai',
             mapLink: 'https://maps.app.goo.gl/mUmMpYtWN6oBhRGq6'
-        }
-    ];
+        });
+    }
+    if (isFriendsMode) {
+        events.push({
+            title: 'Mayra & Nikasi',
+            date: '20250505',
+            time: '110000',
+            endTime: '140000',
+            location: 'Prince Paradise, Vepery, Choolai, Chennai',
+            mapLink: 'https://maps.app.goo.gl/DfQhvBTPzp1oqUha9'
+        });
+        events.push({
+            title: 'DJ Party',
+            date: '20250502',
+            time: '190000',
+            endTime: '220000',
+            location: 'Shree Hall',
+            mapLink: 'https://maps.app.goo.gl/cbHuYaz9h43WGG8y6'
+        });
+        events.push({
+            title: 'Mehendi',
+            date: '20250503',
+            time: '103000',
+            endTime: '120000',
+            location: 'Prince Paradise, Vepery, Choolai, Chennai',
+            mapLink: 'https://maps.app.goo.gl/DfQhvBTPzp1oqUha9'
+        });
+    }
 
     // Add click handlers for all venue links
     document.querySelectorAll('.venue-link').forEach(link => {
