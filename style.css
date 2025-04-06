@@ -90,7 +90,7 @@ body {
     font-size: 1.5rem;
     color: var(--light-color);
     margin-top: auto;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    /* text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); */
     line-height: 1.4;
     padding-top: 2rem;
 }
@@ -474,6 +474,7 @@ body {
     .compliments {
         font-size: 1.6rem;
         margin-top: 2rem;
+        font-weight: normal;
     }
 
     .ganesh-image {

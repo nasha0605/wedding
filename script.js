@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
     ];
     if (!isBusinessMode) {
         events.push({
-            title: 'Wedding Ceremony',
+            title: 'Baraat, Wedding Ceremony',
             date: '20250506',
             time: '103000',
             endTime: '140000',
@@ -96,12 +96,26 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Add click handler for navigate button
     navigateButton.addEventListener('click', function() {
-        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-        if (isMobile) {
-            openGoogleMaps(13.0837, 80.2700, 'JMA Convention Center, Choolai, Chennai');
+        const isAndroid = /Android/i.test(navigator.userAgent);
+        const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+        const latitude = 13.0837;
+        const longitude = 80.2700;
+        const label = 'JMA Convention Center, Choolai, Chennai';
+
+        let mapUrl;
+        if (isAndroid) {
+            let mapUri = "geo:" + latitude + "," + longitude;
+            if (label) {
+                mapUri += "(" + label + ")";
+            }
+            window.open(mapUri, '_system'); // '_system' will open the native app
+        } else if (isIOS) {
+            window.open(`maps://?ll=${latitude},${longitude}`, "_system");
         } else {
-            window.open('https://maps.app.goo.gl/ZUi1joTRvd1LtaNbA', '_blank');
+            mapUrl = 'https://maps.app.goo.gl/ZUi1joTRvd1LtaNbA';
+            window.open(mapUrl, '_blank');
         }
+        
     });
 
     calendarButton.addEventListener('click', function() {
@@ -116,14 +130,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const icsContent = generateICS(calendarEvents);
         downloadFile(icsContent, 'wedding_invite.ics');
     });
-    function openGoogleMaps(latitude, longitude, label) {
-        let mapUri = "geo:" + latitude + "," + longitude;
-        if (label) {
-            mapUri += "(" + label + ")";
-        }
-        
-        window.open(mapUri, '_system'); // '_system' will open the native app
-    }
     function formatDate(dateStr) {
         const year = dateStr.substring(0, 4);
         const month = dateStr.substring(4, 6);
