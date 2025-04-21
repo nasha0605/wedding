@@ -61,6 +61,14 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     if (isFriendsMode) {
         events.push({
+            title: 'Batteesi',
+            date: '20250501',
+            time: '110000',
+            endTime: '130000',
+            location: 'Adinath Jain Seva Kendra, Choolai, Chennai',
+            mapLink: 'https://maps.app.goo.gl/example' // Replace with actual map link
+        });
+        events.push({
             title: 'Mayra & Nikasi',
             date: '20250505',
             time: '110000',
