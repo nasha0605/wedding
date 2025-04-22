@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function() {
             time: '110000',
             endTime: '130000',
             location: 'Adinath Jain Seva Kendra, Choolai, Chennai',
-            mapLink: 'https://maps.app.goo.gl/example' // Replace with actual map link
+            mapLink: 'https://maps.app.goo.gl/XUn9B84qAySmZvh37' // Replace with actual map link
         });
         events.push({
             title: 'Mayra & Nikasi',
