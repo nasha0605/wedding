@@ -31,6 +31,10 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelectorAll('.friends-only').forEach(element => {
             element.style.display = 'none';
         });
+    } else {
+        document.querySelectorAll('.wedding-date').forEach(element => {
+            element.style.display = 'none';
+        });
     }
 
     const navigateButton = document.getElementById('navigate-button');
