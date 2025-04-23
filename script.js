@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const isFriendsMode = urlParams.get('friends') === 'true';
     
     // Hide sections if in business mode
-    if (isBusinessMode) {
+    if (isBusinessMode || isBusinessMode === isFriendsMode) {
         // Hide timeline section
         const timelineSection = document.querySelector('.timeline-section');
         if (timelineSection) {
@@ -59,6 +59,14 @@ document.addEventListener('DOMContentLoaded', function() {
             date: '20250506',
             time: '103000',
             endTime: '140000',
+            location: 'Rani Meyammai Hall, Chennai',
+            mapLink: 'https://maps.app.goo.gl/mUmMpYtWN6oBhRGq6'
+        });
+        events.push({
+            title: 'Reception',
+            date: '20250506',
+            time: '190000',
+            endTime: '220000',
             location: 'Rani Meyammai Hall, Chennai',
             mapLink: 'https://maps.app.goo.gl/mUmMpYtWN6oBhRGq6'
         });
